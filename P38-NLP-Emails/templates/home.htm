@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<style>	
+
+	fieldset {
+	  margin: 0;
+	  padding: 0;
+	  border: 0;
+	}
+
+	fieldset {display: inline-block; vertical-align: middle; }
+	fieldset {display: inline !ie7;}
+
+
+	label {
+	   display: block;
+	   font-weight: bold;
+	}
+	
+	header{
+		background:#03A9F4;#35434a;
+		border-bottom:#448AFF 3px solid;
+		height:120px;
+		width:100%;
+		padding-top:30px;
+
+	}
+	.main-header{
+			text-align:center;
+			background-color: blue;
+			height:100px;
+			width:100%;
+			margin:0px;
+		}
+	#brandname{
+		float:left;
+		font-size:30px;
+		color: #fff;
+		margin: 10px;
+	}
+
+	button:hover {
+		  background:  #66001a;
+		  }
+	.btn-block
+		 {float: center}
+		 button {
+		  width: 150px;
+		  padding: 20px;
+		  border: none;		  
+		  border-radius: 5px; 
+		  background:  #05A1A2 ;
+		  font-size: 20px;
+		  align:center-ri;
+		  cursor: pointer;		 
+		  }	 
+</style>
+
+<body>	
+	<header>
+		<div class="container">
+		<div id="brandname">
+			<h1 style="text-align: left; color:White;margin-top: 0%; margin-bottom: 0%"><b>Machine Learning App for NLP Emails</b></h1>	
+	</header>
+	<p style="color:#05223C ;font-size: 30px;" ><b><u>NLP Emails- Abusive or Non-Abusive</u></b></p>
+	<fieldset></br>
+		
+		<div class="ml-container">
+
+			<form action="{{ url_for('predict')}}" method="POST">
+				
+				<label style="font-size: 25px;"><b><i>Enter Your Message Here</i></b></label><br/>
+				
+				<textarea name="message" rows="3" cols="50"></textarea>
+				<br/><br/>
+				<!-- <input type="submit" class="btn-info" value="PREDICT">
+			 -->
+				<div class="btn-block">	
+					<button type="submit"><b><i>PREDICT</b></i></button>
+				</div>		
+			</form>
+			
+		</div><br/><br/><br/>
+	</fieldset>
+	<fieldset>
+		<div>
+		<img src="{{url_for('static',filename='word.jpg')}}" alt="centered image" style="margin-left: 30%; margin-top:%" width="850" height="450" />
+		
+		</div>
+		
+	</fieldset>
+	
+	<div class="footer">	
+	<p><i><b>Team : Rashmi Kulkarni, Ruchita, Shraddha Mankar, Sucharita Mukherjee, Vaishnavi EM </b></i></p>
+
+	<p><i><b>Mentor: Varun Vennelaganti</b></i></p>		
+	
+</div>
+
+	
+	
+</body>
+</html>

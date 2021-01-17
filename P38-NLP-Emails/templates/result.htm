@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<style>
+	header{
+		background:#03A9F4;#35434a;
+		border-bottom:#448AFF 3px solid;
+		height:120px;
+		width:100%;
+		padding-top:30px;
+
+	}
+	.main-header{
+			text-align:center;
+			background-color: blue;
+			height:100px;
+			width:100%;
+			margin:0px;
+		}
+</style>
+
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			<h1 style="text-align: left; color:White;margin-top: 0.5%; margin-bottom: 0.5%"><b>Machine Learning App for NLP Emails</b></h1>	
+		</div>
+	</div>
+	</header>
+	<p style="color:#05223C ;font-size: 30px;" ><b><u>NLP Emails- Abusive or Non-Abusive</u></b></p>
+	
+	<p style="color:blue;font-size:20;text-align: center;"><b>Results for Comment</b></p>
+	<div class="results">
+	
+	<img src="{{url_for('static',filename='a4.jpg')}}"alt="centered image" style="margin-left: 30%; margin-top:%" width="850" height="430">
+
+		
+	{% if prediction == 1%}
+	<h2 style="color:blue;">Non Abusive</h2>
+	{% elif prediction == 0%}
+	<h2 style="color:red;">Abusive</h2>
+	{% endif %}
+
+	</div>
+
+</body>
+</html> 
